@@ -51,21 +51,23 @@ const Resrtaurantcard = ({ cloudinaryImageId, name, cuisines, rating, deliveryti
 }
 
 
-
-
-
 const Body = () => {
   return (
     <div className="lowds" >
       <div className="search" >Search</div>
       <div className="res-container">
+
+
+
+
+
         {restaurantList.map((infos) => {
           console.log(infos);
 
-          return <Resrtaurantcard
+           return <Resrtaurantcard key={infos.info.id}
             name={infos.info.name}
             cuisines={infos.info.cuisines}
-            rating={infos.info.rating}
+            rating={infos.info.avgRating}
             deliverytime={infos.info.deliveryTime}
             costForTwo={infos.info.costForTwo} cloudinaryImageId={infos.info.cloudinaryImageId} />
         })}
